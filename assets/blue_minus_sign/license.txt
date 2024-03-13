@@ -1,0 +1,11 @@
+Model Information:
+* title:	Blue Minus Sign
+* source:	https://sketchfab.com/3d-models/blue-minus-sign-7c25a949b3e64b7e8ddb7a30525a63a7
+* author:	AJH2 (https://sketchfab.com/AJH2)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Blue Minus Sign" (https://sketchfab.com/3d-models/blue-minus-sign-7c25a949b3e64b7e8ddb7a30525a63a7) by AJH2 (https://sketchfab.com/AJH2) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

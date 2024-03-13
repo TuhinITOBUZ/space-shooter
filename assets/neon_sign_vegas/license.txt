@@ -1,0 +1,11 @@
+Model Information:
+* title:	Neon Sign "Vegas"
+* source:	https://sketchfab.com/3d-models/neon-sign-vegas-0beef653394f466e80044ac15c3234f9
+* author:	Donstereo (https://sketchfab.com/Donstereo)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Neon Sign "Vegas"" (https://sketchfab.com/3d-models/neon-sign-vegas-0beef653394f466e80044ac15c3234f9) by Donstereo (https://sketchfab.com/Donstereo) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

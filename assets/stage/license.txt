@@ -1,0 +1,11 @@
+Model Information:
+* title:	Stage
+* source:	https://sketchfab.com/3d-models/stage-510670ac31ed4e20b06bdb2d4a565444
+* author:	小鳥遊ゆうき (https://sketchfab.com/holun122)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Stage" (https://sketchfab.com/3d-models/stage-510670ac31ed4e20b06bdb2d4a565444) by 小鳥遊ゆうき (https://sketchfab.com/holun122) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

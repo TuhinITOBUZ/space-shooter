@@ -1,0 +1,285 @@
+<html>
+  <head>
+    <title>Space Shooter</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script defer type="module" src="../src/scripts/main.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- assets -->
+      <a-assets>
+        <a-asset-item
+          id="floor"
+          src="../assets/stage/scene.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="stage"
+          src="../assets/kda_evelynn_dance_stage_moonlight_edition/scene.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="vegas-pole"
+          src="../assets/neon_sign_vegas/scene.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="sky"
+          src="../assets/sky_pano_-_milkyway/scene.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="sifi-gun-1"
+          src="../assets/sci_fi_gun/scene.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="sifi-gun-2"
+          src="../assets/scifi_gun/scene.gltf"
+        ></a-asset-item>
+        <a-assets-item
+          id="screen"
+          src="../assets/projector_screen_low_poly/scene.gltf"
+        ></a-assets-item>
+        <a-asset-item
+          id="start-button"
+          src="../assets/start_button_v01/scene.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="fire-ball"
+          src="../assets/fireball__energy_sphere/scene.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="alien"
+          src="../assets/alien/scene.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="plus-sign"
+          src="../assets/blue_plus_sign/scene.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="minus-sign"
+          src="../assets/blue_minus_sign/scene.gltf"
+        ></a-asset-item>
+        <audio
+          id="game-music"
+          src="../assets/Most Epic Badass Action Music Mix.mp3"
+        ></audio>
+        <audio
+          id="game-over-sound"
+          src="../assets/Game Over sound effect.mp3"
+        ></audio>
+        <audio
+          id="fire-sound"
+          src="../assets/X2Download.app - Star Wars Blaster Shot _ HD Sound Effect (320 kbps).mp3"
+        ></audio>
+      </a-assets>
+      <!-- ------------------------------------------ -->
+
+      <!-- Controllers -->
+      <!-- <a-entity id="cameraView" position="0 1.6 12" rotation="0 0 0">
+        <a-camera id="camera">
+          <a-entity
+            detect-trigger-press
+            cursor
+            position="0 0 -1"
+            geometry="primitive:sphere; radius:0.006"
+            material="color: red; opacity:0.6; shader:flat"
+          ></a-entity>
+        </a-camera>
+      </a-entity> -->
+
+      <!-- vr controller -->
+      <a-entity id="camera" position="0 1.6 8">
+        <a-camera></a-camera>
+        <a-entity
+          id="left-hand"
+          class="controller"
+          raycaster="objects: .collide; showLine:true;"
+          laser-controls
+          hand-controls="hand: left; color:#ADD8E6;"
+        >
+        </a-entity>
+        <a-entity
+          id="right-hand"
+          class="controller"
+          hand-controls="hand: right;color:#ADD8E6;"
+          laser-controls
+          raycaster="objects: .collide; showLine:true;"
+        >
+        </a-entity>
+      </a-entity>
+      <!-- ---------------------------------------------- -->
+
+      <!-- sky -->
+      <a-entity
+        sound="src: #game-music; autoplay:true; loop:true;"
+        gltf-model="#sky"
+        scale="100 100 100"
+      ></a-entity>
+
+      <a-entity id="starting-screen" visible="true">
+        <!-- stage -->
+        <a-entity
+          gltf-model="#stage"
+          position="0 -14 0"
+          rotation="0 -90 0"
+          scale="1 1 1"
+          material="shader:flat"
+        ></a-entity>
+        <!-- pole -->
+        <a-entity
+          gltf-model="#vegas-pole"
+          position="24 0 -14"
+          rotation="0 -45 0"
+        ></a-entity>
+
+        <a-text
+          position="0 10 -10"
+          animation="property:rotation; from: 0 -30 0 ;to: 0 30 0; dur:5000; loop:true; dir:alternate"
+          value="Welcome to \n Space Shotter Game"
+          align="center"
+          scale="5 5 0"
+          color="violet"
+          font="https://cdn.aframe.io/fonts/mozillavr.fnt"
+          side="double"
+        ></a-text>
+
+        <a-text
+          id="display-current-score"
+          value="Score: 0"
+          position="0 20 -20"
+          scale="20 20 0"
+          align="center"
+        ></a-text>
+
+        <a-entity id="gun-box">
+          <a-entity
+            gun-selection
+            class="collide"
+            id="gun-1"
+            gltf-model="#sifi-gun-2"
+            position="-1 4 0"
+            animation="property:rotation; to:0 360 0; dir:alternate; dur:5000; loop:true"
+            scale=".2 .2 .2"
+          >
+            <a-entity
+              id="gun-1-marker"
+              geometry="primitive: ring"
+              scale="5 5 5"
+              material="color:red; side:double"
+              visible="false"
+            ></a-entity
+          ></a-entity>
+          <a-entity
+            gun-selection
+            class="collide"
+            id="gun-2"
+            gltf-model="#sifi-gun-1"
+            position="1 4 0"
+            animation="property:rotation; to:0 360 0; dir:alternate; dur:5000; loop:true"
+            scale="1 1 1"
+          >
+            <a-entity
+              id="gun-2-marker"
+              geometry="primitive: ring"
+              scale=".95 .95 .95"
+              material="color:red; side:double"
+              visible="false"
+            >
+            </a-entity>
+          </a-entity>
+          <a-text
+            id="gun-selection-text"
+            value="SELECT GUN"
+            scale="2 2 2"
+            align="center"
+            color="red"
+            position="0 2 -1"
+          ></a-text>
+        </a-entity>
+
+        <a-entity
+          increase-game-time
+          class="collide"
+          position="-6 5.5 2"
+          gltf-model="#plus-sign"
+          scale=".09 .09 .09"
+          rotation="0 45 0"
+        ></a-entity>
+        <a-entity
+          decrease-game-time
+          class="collide"
+          position="-5 5.8 1.5"
+          gltf-model="#minus-sign"
+          scale=".1 .1 .1"
+          rotation="0 45 0"
+        ></a-entity>
+
+        <a-entity
+          id="instructions"
+          gltf-model="#screen"
+          position="-7 3 2"
+          rotation="0 -40 0"
+          scale=".5 .5 .5"
+        >
+          <a-text
+            change-game-time
+            scale="3 3 0"
+            position="1 4.5 -.5"
+            rotation="0 90 0"
+          ></a-text>
+          <a-text
+            position="1 2 .5"
+            scale="5 5 0"
+            2
+            rotation="0 90 0"
+            color="red"
+            align="center"
+            value="Game \n Instructions"
+          ></a-text>
+          <a-text
+            scale="2 2 2"
+            position="1 -1 .2"
+            rotation="0 90 0"
+            color="orange"
+            align="center"
+            value="Welcome to Cube Shooter! In this fast-paced shooting game, your objective is to shoot cubes of different colors to score points. Pay close attention to the cube colors and their corresponding scores. Aim carefully, shoot strategically, and aim for the highest score possible!"
+          >
+          </a-text>
+        </a-entity>
+
+        <a-entity
+          start-game
+          class="collide"
+          id="start-game"
+          gltf-model="#start-button"
+          position="4 3 4"
+          rotation="90 -30 0"
+          scale=".12 .12 .12"
+        ></a-entity>
+      </a-entity>
+
+      <a-entity id="game-mode" visible="false">
+        <a-entity
+          gltf-model="#floor"
+          position="0 2 10"
+          rotation="0 120 0"
+          scale=".02 .02 .02"
+        ></a-entity>
+
+        <a-entity
+          current-score
+          id="score"
+          look-at="#camera"
+          position="80 80 -50"
+          scale=" 100 100"
+          text="value: Score: 0; color:#FFFFFF; align:center"
+        ></a-entity>
+        <a-entity
+          timer
+          id="timer"
+          position="0 100 -100"
+          scale=" 250 250"
+          text="value: TIMER: 120; color:#FFFFFF; align:center"
+        ></a-entity>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>

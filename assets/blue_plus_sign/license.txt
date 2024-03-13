@@ -1,0 +1,11 @@
+Model Information:
+* title:	Blue Plus Sign
+* source:	https://sketchfab.com/3d-models/blue-plus-sign-a64ddf122d2247949d9b18ca9c3813af
+* author:	AJH2 (https://sketchfab.com/AJH2)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Blue Plus Sign" (https://sketchfab.com/3d-models/blue-plus-sign-a64ddf122d2247949d9b18ca9c3813af) by AJH2 (https://sketchfab.com/AJH2) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
